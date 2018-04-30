@@ -19,4 +19,4 @@ nucleotide_tally = (str(DNA_string.count("A")) + " " +
                     str(DNA_string.count("T")))
 
 #write tally to new file
-write_to_file(input_filename)
+write_to_file(input_filename, nucleotide_tally)
