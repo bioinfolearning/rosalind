@@ -28,3 +28,14 @@ def write_to_file(input_filename, content):
     filename = input_filename.split(".")
     output_filename = filename[0] + "_output.txt"
     return output_filename
+
+# get_nums
+# returns a list of numbers read from a single line in a specific file
+def get_nums(input_filename):
+    file_location = "Rosalind_datasets/" + input_filename
+    file = open(file_location)
+    nums_list = file.read().strip().split()
+    nums = []
+    for num in nums_list:
+        nums.append(int(num))
+    return nums
