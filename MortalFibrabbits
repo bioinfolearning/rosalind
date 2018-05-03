@@ -1,0 +1,27 @@
+#What to do:
+#1. have an original rabbit list, in which the rabbit pair are babies
+#2. every round, count the number of baby rabbits made and add them to the list
+#3. every round, remove the bunnies that are the age specified
+
+from helperfunctions import write_to_file, make_output_filename, get_nums, make_list
+
+input_filename = "rfilename.txt"
+
+bunny_data = get_nums(input_filename)
+
+#now we could keep a single list, and the index represents the age (1-based srry)
+#while the number at that index represents the bunnies of that age that are alive
+
+def mortal_rabbits(months, life_expectancy):
+    bunnies = make_list(life_expectancy+1)
+    bunnies[0] += 1
+    for i in range(1, months):
+        babies = sum(bunnies[1:])
+        #these two next steps effectively remove the old bunnies
+        bunnies.insert(0,babies)
+        bunnies = bunnies[:-2]
+        bunnies.insert(life_expectancy,0)
+    return sum(bunnies)
+
+remaining_bunnies = mortal_rabbits(bunny_data[0], bunny_data[1])
+write_to_file(input_filename, str(remaining_bunnies))
