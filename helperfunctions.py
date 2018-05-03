@@ -22,7 +22,7 @@ def write_to_file(input_filename, content):
     file.close()
     
  # make_output_filename
- # because I'm lazy and can't be bothered
+ # because I'm lazy and can't be bothered   
     
  def make_output_filename(input_filename):
     filename = input_filename.split(".")
@@ -31,11 +31,26 @@ def write_to_file(input_filename, content):
 
 # get_nums
 # returns a list of numbers read from a single line in a specific file
+
 def get_nums(input_filename):
-    file_location = "Rosalind_datasets/" + input_filename
+    file_location = "file_path/" + input_filename
     file = open(file_location)
     nums_list = file.read().strip().split()
     nums = []
     for num in nums_list:
         nums.append(int(num))
     return nums
+
+# make_iterator
+# returns an iterator to go through specified format sequences in a file with BioPython
+
+def make_iterator(input_filename, format_type):
+    file_location = "file_path/" + input_filename
+    iterator = SeqIO.parse(file_location, format_type)
+    return iterator
+
+
+
+
+
+
