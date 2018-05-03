@@ -58,6 +58,18 @@ def make_iterator(input_filename, format_type):
     iterator = SeqIO.parse(file_location, format_type)
     return iterator
 
+# make_matrix
+# given the number of columns and rows, creates a zero matrix with those dimensions
+
+def make_matrix(columns, rows):
+    matrix = []
+    for i in range (0, columns):
+        column = []
+        for j in range(0, rows):
+            column.append(0)
+        matrix.append(column)
+    return matrix
+
 
 
 
