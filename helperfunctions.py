@@ -9,6 +9,15 @@ def get_string(input_filename):
     file = open(file_location)
     string = file.read().strip()
     return string
+
+# get_strings
+# pretty much the same as above but it does it with multiple sequences and returns a list of them
+
+def get_strings(input_filename):
+    file_location = "Rosalind_datasets/" + input_filename
+    file = open(file_location)
+    strings = file.readlines()
+    return strings
     
 # write_to_file
 # writes the contents specified to a file (given its name)
