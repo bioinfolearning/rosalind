@@ -3,7 +3,9 @@
 #2. Extract both sequences from a single file
 #3. write total point mutations to file
 
-input_filename = "rosalind_hamm.txt"
+from helperfunctions import get_strings, write_to_file, make_output_filename
+
+input_filename = "filename.txt"
 
 def hamming_distance(DNA_seq1, DNA_seq2):
     Dh = 0
