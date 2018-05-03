@@ -70,8 +70,14 @@ def make_matrix(columns, rows):
         matrix.append(column)
     return matrix
 
+# make_list
+# makes a zeroed list of specified length
 
-
+def make_list(length):
+    l = []
+    for i in range(0, length):
+        l.append(0)
+    return l
 
 
 
