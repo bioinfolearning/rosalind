@@ -71,12 +71,12 @@ def make_matrix(columns, rows):
     return matrix
 
 # make_list
-# makes a zeroed list of specified length
+# makes a list of specified length with initial specified values
 
-def make_list(length):
+def make_list(length, symbol):
     l = []
     for i in range(0, length):
-        l.append(0)
+        l.append(symbol)
     return l
 
 
